@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    
   end
 
   def edit
