@@ -17,16 +17,16 @@
 
       <%= f.submit "Update Book", class:"btn btn-success btn-sm" %>
       <% end %>
-      
+
       <a class="book_show">
-        <%= link_to "Show" book_path(@book.id) %>
+        <%= link_to "Show", book_path(@book.id) %>
       </a>
       |
       <a class="back">
-        <%= link_to "Back" books_path %>
+        <%= link_to "Back", books_path %>
       </a>
-      
-      
+
+
     </div>
   </div>
 </div>
