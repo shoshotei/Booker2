@@ -1,7 +1,7 @@
 <p><%= notice %></p>
 <div class="container">
   <div class="row">
-     <%= render 'form', book: @book %>
+     <%= render 'form', book: @book, user: @user %>
 
      <div class="col-md-8 offset-md-1">
        <h2>Book Detail</h2>
@@ -10,8 +10,9 @@
            <tr>
 
              <td>
-               <%= link_to user_path(current_user) do %>
-                <%= image_tag current_user.get_profile_image %>
+               <%= link_to user_path(@user) do %>
+                <%= image_tag @user.get_profile_image %></br>
+                <%= @user.name %>
                <% end %>
              </td>
              <td>

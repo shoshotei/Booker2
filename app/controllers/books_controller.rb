@@ -20,16 +20,21 @@ class BooksController < ApplicationController
   def index
     @book = Book.new
     @books = Book.all
-    @user = current_user.id
   end
 
   def show
     @book = Book.find(params[:id])
+    @user = @book.user
     #@books = Book.where(title: @book.title)
   end
 
   def edit
     @book = Book.find(params[:id])
+    if @book.user == current_user
+        render "edit"
+    else
+        redirect_to books_path
+    end
   end
 
   def update
@@ -53,4 +58,7 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :body)
   end
+
+
+
 end
